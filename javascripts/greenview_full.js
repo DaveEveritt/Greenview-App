@@ -9,6 +9,7 @@ var buildings = {
 var bldg_ids = ["0015", "0069", "0111", "0213", "0490"];
 var zones = {};
 
+// set.timeout new ajax
 
 // the main function
 function loadZones() {
