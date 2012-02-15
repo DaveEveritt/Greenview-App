@@ -1,24 +1,24 @@
 <!doctype html>
 <html lang="en">
     <head>
-    
+
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
-        <title>DMU: Go Green Week</title>
-        <meta name="description" content="">
+        <title>DMU GreenView: energy usage of university buildings</title>
+        <meta name="description" content="GreenView: energy usage of De Montfort university buildings">
         <meta name="author" content="">
-        
+
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        
+
         <!-- Mobile Specific Metas
         ================================================== -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        
+
         <!-- JS
         ================================================== -->
         <script src='javascripts/jquery-1.6.3.min.js'></script>
@@ -31,16 +31,16 @@
         <script src="javascripts/highcharts/highcharts.js"></script>
         <script src="javascripts/highcharts/themes/grid.js"></script>
         <script src="javascripts/highcharts/graphs.js"></script>
+
         <!-- CSS
         ================================================== -->
-        <link rel="stylesheet" type="text/css" media="screen" href="javascripts/jquery.mobile-1.0b3.min.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="javascripts/jquery.mobile.scrollview.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jquery.mobile-1.0b3.min.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jquery.mobile.scrollview.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/base.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/skeleton.css">
-        <link rel="stylesheet" type="text/css" href="stylesheets/layout.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/zoo.css">
-        <link rel="stylesheet" href="javascripts/add2home.css">
-        
+        <link rel="stylesheet" type="text/css" href="stylesheets/add2home.css">
+
         <!-- Favicons
         ================================================== -->
         <link rel="shortcut icon" href="images/favicon.ico">
@@ -48,20 +48,19 @@
         <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
         <link rel="apple-touch-startup-image" href="images/splash.gif">
-        
+
     </head>
     <body>
-    
-        <!-- Primary Page Layout
-        --This is the page you'll land on to pick a building--
+
+        <!-- Primary Page Layout - pick a building
         ================================================== -->
-        
+
         <div data-role="page" id="zoo" data-theme="zoo">
             <div data-role="header" data-id="head">
                 <div data-role="navbar" class="nav-glyphish-example">
                     <ul>
-                        <li><a href="#about" data-role="button" data-theme="a" data-icon="info">About</a></li>
                         <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="left" data-icon="myapp-map">Map</a></li>
+                        <li><a href="#about" data-role="button" data-theme="a" data-icon="info">About</a></li>
                     </ul>
                 </div>
             </div>
@@ -74,70 +73,45 @@
                     <a class="hugh"      href="#building" onclick="showZone('video','0490');showName('h1','0490');"><img src="images/hugh.png" alt="Hugh Aston Building" /></a>
                 </div>
             </div>
-            
+
             <div data-role="footer" data-position="fixed" data-id="lev1"></div>
         </div><!-- container -->
-        
-        
-        <!-- About Page Layout
-        --This is the about page --
+
+
+        <!-- About Page ('Story' graphics)
         ================================================== -->
-        
+
         <div data-role="page" id="about">
             <div data-role="header" data-id="head">
                 <div data-role="navbar" class="nav-glyphish-example">
                     <ul>
+                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="left" data-icon="myapp-map">Map</a></li>
                         <li><a href="#about" data-role="button" data-theme="a" data-icon="info">About</a></li>
-                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-map">Map</a></li>
                     </ul>
                 </div>
             </div>
             <div data-role="content">
                 <img src="images/story1.png" alt="Story" class="story">
-                <img src="images/story2.png" alt="Story" class="story"> 
-                <img src="images/story3.png" alt="Story" class="story"> 
+                <img src="images/story2.png" alt="Story" class="story">
+                <img src="images/story3.png" alt="Story" class="story">
             </div>
-            
+
             <div data-role="footer" data-position="fixed" data-id="lev1">
             </div>
         </div><!-- container -->
-        
-        
-        <!-- About Page Layout
-        --This is the about page --
+
+
+        <!-- Feed Page Layout: Twitter feed (UNUSED)
         ================================================== -->
-        
-        <div data-role="page" id="data">
-            <div data-role="header" data-id="head">
-                <div data-role="navbar" class="nav-glyphish-example">
-                    <ul>
-                        <li><a href="#about" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-total">About</a></li>
-                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-graph" rel="external">Buildings</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div data-role="content">
-                <div class="textbox">Download new data from here. (I don't know if we really need this!)
-                </div>
-            </div>
-        
-            <div data-role="footer" data-position="fixed" data-id="lev1">
-            </div>
-        </div><!-- container -->
-        
-        
-        <!-- Feed Page Layout
-        --This is the feed page --
-        ================================================== -->
-        
+
         <div data-role="page" id="feed">
             <div data-role="header" data-id="head">
                 <div data-role="navbar" class="nav-glyphish-example">
                     <ul>
-                        <li><a href="#about" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-total">About</a></li>
-                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-graph" rel="external">Buildings</a></li>
+                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
+                        <li><a href="#about" data-role="button" data-theme="a" data-iconpos="top" data-icon="info">About</a></li>
                         <li><a href="#feed" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-league">Twitter Feed</a></li>
-                       
+
                     </ul>
                 </div>
             </div>
@@ -145,6 +119,7 @@
                 <div class="textbox">
                     <script src="http://widgets.twimg.com/j/2/widget.js"></script>
                     <script>
+                    //replace with Gareth's nice styles
                      new TWTR.Widget({
                          version: 2,
                          type: 'profile',
@@ -154,13 +129,13 @@
                          height: 250,
                          theme: {
                              shell: {
-                             background: '#ffffff',
-                             color: '#000000'
+                                 background: '#ffffff',
+                                 color: '#000000'
                              },
                              tweets: {
-                             background: '#ffffff',
-                             color: '#000000',
-                             links: '#368713'
+                                 background: '#ffffff',
+                                 color: '#000000',
+                                 links: '#368713'
                              }
                          },
                          features: {
@@ -173,82 +148,81 @@
                     </script>
                 </div>
             </div>
-            
+
             <div data-role="footer" data-position="fixed" data-id="lev1">
+                <h1>BUILDING NAME</h1>
             </div>
         </div><!-- container -->
-        
-        
-        <!-- ===============================================
-        --THIS IS WHERE THE BUILDING SPECIFIC PAGES LIVE--
+
+
+        <!-- +++++++++++++++++++++++++++++++++++++++++++++
+        BUILDING-SPECIFIC PAGES
+        ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+        <!-- Building Page - individual building video
         ================================================== -->
-        
-        <!-- Building Page Layout
-        --This is the page you'll land on to pick a building--
-        ================================================== -->
-        
+
         <div data-role="page" id="building">
             <div data-role="header" data-id="head">
                 <div data-role="navbar" class="nav-glyphish-example">
                     <ul>
+                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
                         <li><a href="#building" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-watch">Watch</a></li>
                         <li><a href="#graphs" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-graph">Graphs</a></li>
                         <li><a href="#stats" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-about" data-transition="flip">About Me</a></li>
-                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
                     </ul>
                 </div>
             </div>
             <div data-role="content" id="video">
                 <!-- script inserts video -->
             </div>
-            
-            <div data-role="footer" data-position="fixed" data-id="lev2">
-                <h1>BUILDING NAME</h1>
-            </div>
-        </div><!-- container -->    
-    
-    <!-- Stats Layout
-        --This is the page you'll land on to view stats (Top TRUMPS)--
-        ================================================== -->
-        
-        <div data-role="page" id="stats">
-            <div data-role="header" data-id="head">
-                <div data-role="navbar" class="nav-glyphish-example">
-                    <ul>
-                        <li><a href="#building" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-watch">Watch</a></li>
-                        <li><a href="#graphs" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-graph">Graphs</a></li>
-                        <li><a href="#stats" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-about" data-transition="flip">About Me</a></li>
-                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
-                    </ul>
-                </div>
-            </div>
-        
-            <div data-role="content">
-                <div id="trumpsbox">
-                    <!-- building-specific top trump image inserted dynamically, using the ID to fetch a one -->
-                </div>
-            </div>
-            
+
             <div data-role="footer" data-position="fixed" data-id="lev2">
                 <h1>BUILDING NAME</h1>
             </div>
         </div><!-- container -->
-        
-        
-        <!-- Tweet Layout
-        --This is the page you'll land on to send a tweet--
+
+
+        <!-- Stats Page - Top Trumps cards
         ================================================== -->
-        
+
+        <div data-role="page" id="stats">
+            <div data-role="header" data-id="head">
+                <div data-role="navbar" class="nav-glyphish-example">
+                    <ul>
+                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
+                        <li><a href="#building" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-watch">Watch</a></li>
+                        <li><a href="#graphs" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-graph">Graphs</a></li>
+                        <li><a href="#stats" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-about" data-transition="flip">About Me</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-role="content">
+                <div id="trumpsbox">
+                    <!-- building-specific top trump image inserted dynamically, using ID to let the right one in -->
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-id="lev2">
+                <h1>BUILDING NAME</h1>
+            </div>
+        </div><!-- container -->
+
+
+        <!-- Tweet Page - send a tweet (UNUSED)
+        ================================================== -->
+
         <div data-role="page" id="tweet">
             <div data-role="header" data-id="head">
                 <div data-role="navbar" class="nav-glyphish-example">
                     <ul>
+                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
                         <li><a href="#building" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-watch">Watch</a></li>
                         <li><a href="#graphs" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-graph">Graphs</a></li>
                         <li><a href="#stats" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-about" data-transition="flip">About Me</a></li>
-                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
                     </ul>
-                </div>    
+                </div>
             </div>
             <div data-role="content">
                 <div class="textbox">
@@ -258,27 +232,26 @@
             <div data-role="footer" data-position="fixed">
                 <h1>BUILDING NAME</h1>
             </div>
-        </div><!-- container -->    
-        
-        <!-- Graphs Layout
-        --This is the page you'll land on to view a graph --
+        </div><!-- container -->
+
+        <!-- Graphs page - view detailed graphs
         ================================================== -->
-        
+
         <div data-role="page" id="graphs">
             <div data-role="header" data-id="head">
                 <div data-role="navbar" class="nav-glyphish-example">
                     <ul>
+                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
                         <li><a href="#building" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-watch">Watch</a></li>
                         <li><a href="#graphs" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-graph">Graphs</a></li>
                         <li><a href="#stats" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-about" data-transition="flip">About Me</a></li>
-                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
                     </ul>
-                </div>    
+                </div>
             </div>
             <div data-role="content">
                 <div id="graph"></div>
             </div>
-            
+
             <div data-role="footer" data-position="fixed">
                 <h1>BUILDING NAME</h1>
             </div>

@@ -5,243 +5,276 @@
 * Free to use under the MIT license.
 * http://www.opensource.org/licenses/mit-license.php
 * 5/20/2011
-*/
 
-
-/* Table of Contents
+Table of Contents
 ==================================================
-    #Base 960 Grid    
-    #Tablet (Portrait)
-    #Mobile (Portrait) 
-    #Mobile (Landscape)
-    #Clearing */
+  #Base 960 Grid    
+  #Tablet (Portrait)
+  #Mobile (Portrait) 
+  #Mobile (Landscape)
+  #Clearing
+*/
     
 /* custom icons */
-
-.nav-glyphish-example .ui-icon { width: 20px!important; height: 20px!important; margin-left: -10px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius:0!important; border-radius: 0!important; }
-
-.ui-icon-myapp-map   {background: url("../images/103-map.png") no-repeat !important;}
-
-.ui-icon-myapp-watch    {background: url("../images/70-tv.png") no-repeat !important;}
-.ui-icon-myapp-home   {background: url("../images/231-birdhouse.png") no-repeat !important;}
-.ui-icon-myapp-about    {background: url("../images/123-id-card.png") no-repeat !important;}
-.ui-icon-myapp-graph    {background: url("../images/122-stats.png") no-repeat !important;}
-
+.nav-glyphish-example .ui-icon { width:20px!important; height:20px!important; margin-left:-10px !important; box-shadow:none!important; -moz-box-shadow:none!important; -webkit-box-shadow:none!important; -webkit-border-radius:0!important; border-radius:0!important; }
+.ui-icon-myapp-map   {background:url("../images/103-map.png") no-repeat !important;}
+.ui-icon-myapp-watch {background:url("../images/70-tv.png") no-repeat !important;}
+.ui-icon-myapp-home  {background:url("../images/231-birdhouse.png") no-repeat !important;}
+.ui-icon-myapp-about {background:url("../images/123-id-card.png") no-repeat !important;}
+.ui-icon-myapp-graph {background:url("../images/122-stats.png") no-repeat !important;}
 
 .ui-page {margin:auto;}
 
 /*styles for up/down list
 ++++++++++++++++++++++++++++++++++++++++++++++++++ */
-.ui-li-up { background-color: #5ed369; text-shadow: 0 0px 0px #f6f6f6; color:#fff;}
-.ui-li-dn { background-color: #dc1d1d; text-shadow: 0 0px 0px #f6f6f6; color:#fff;}
-    
-ul + p {margin-top: 1em;} /* space above all paragraphs when after lists */
+.ui-li-up,
+.ui-li-dn { text-shadow:0 0px 0px #f6f6f6; color:#fff;}
+.ui-li-up { background-color:#5ed369;}
+.ui-li-dn { background-color:#dc1d1d;}
+ul + p {margin-top:1em;} /* space above all paragraphs when after lists */
 
 .story{width:100%;}
 
 
-
 /* #Base 960 Grid 
 ================================================== */
-body {background-image:url('../images/wood.jpg'); background-color:#afc5e9; background-position: bottom; margin:auto; background-attachment:fixed; background-size:100%; height:100%; -moz-background-size: 100%; overflow:hidden;}
-#home, #league, #tips, #total, #DMU, #info, #screen, .container {width: 100%; padding: 0; height:100%; position:absolute; background:transparent;}
-#footer {
-    -webkit-box-sizing: border-box;
-    border:0px;
-    padding: 0px;
-    height: 40px;
-    background-color:#f00;
-     position: absolute;
-     top:0px;
-    text-align:center;
-    width:100%;
-    /*background-image:url('images/note_bottom.jpg');*/
+body {
+  background-image:url('../images/wood.jpg');
+  background-color:#afc5e9;
+  background-position:bottom;
+  margin:auto;
+  background-attachment:fixed;
+  background-size:100%;
+  height:100%;
+  -moz-background-size:100%;
+  overflow:hidden;
 }
-    
+#home, #tips, #total, #DMU, #info, #screen, .container {
+  width:100%;
+  padding:0;
+  height:100%;
+  position:absolute;
+  background:transparent;
+}
+#footer {
+  -webkit-box-sizing:border-box;
+  border:0px;
+  padding:0px;
+  height:40px;
+  background-color:#f00;
+  background-color:rgba(20, 20, 20, .7);
+  position:absolute;
+  top:0px;
+  text-align:center;
+  width:100%;
+}
+
 .content {
-    
-    width:90%;
-    margin:auto;
-    padding:10px;
-    margin-top:20px;
-    margin-bottom:10px;
-    line-height:1.5em;
-    background-color:#fff;
-    border: 0px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    overflow-y:scroll;
+  width:90%;
+  margin:auto;
+  padding:10px;
+  margin-top:20px;
+  margin-bottom:10px;
+  line-height:1.5em;
+  background-color:#fff;
+  border:0px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  overflow-y:scroll;
 }
 .content h2 {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    color: #66bcfa;
-    padding: 5px 0;
-    font-style:italic;
+  font-family:Georgia, "Times New Roman", Times, serif;
+  color:#66bcfa;
+  padding:5px 0;
+  font-style:italic;
 }
-
-.innercontent{
-
-}
-
 .articleimg {
-    float:left;
+  float:left;
+}
+.mapcontent {
+  text-align:center;
+}
+.hugh, .ioct, .queens, .campus, .kimberlin {
+  margin:0px;
+  padding:0px;
+  height:200px;
+  width:200px;
+}
+#total .content,
+#screen .content {
+  height:68%;
+  background-color:rgba(255,255,255,0.75);
+}
+.contacts {
+  width:92%;
+  margin:2px auto;
+  color:#f2ea07;
+  text-align:center;
+  text-shadow:black 0 0 4px;
+  font-weight:bold;
+  letter-spacing:1px;
+  font-size:1.25em;
+  background-color:rgba(255,255,255,0.42);
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+}
+#graph{ min-height:96%;}
+.textbox {
+  width:90%;
+  height:70%;
+  margin:auto;
+  margin-top:10px;
+  font-size:2em;
+  padding:10px;
+  background-color:rgba(255, 255, 255, .9);
+  text-shadow:black 0 0 0px;
+  color:#444;
+  -moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;
 }
     
-.totalizer {width:10%; float:left;}
-.thermoimg {width:100%; float:left} /* until new graphic */
-.hometext {}
-
-.graphloader {background-color: transparent; width: 90%;float:left;}
-.graphlinker {display:none;}
-
-#total .content,
-#screen .content,
-#league .content {height: 68%; background-color: rgba(255,255,255,0.75);}
-#league .innercontent li {padding: 6px 1em; font-size: 1.5em; letter-spacing: 2px; text-shadow: black 0 0 2px;}
-#league .innercontent .ui-li-count {width: 3em; font-size: 0.7em; font-weight: bold; text-align: right;}
-/* 7c92b6 #d4ff75*/
-.contacts {width: 92%; margin: 2px auto; color: #f2ea07; text-align: center; text-shadow: black 0 0 4px; font-weight: bold; letter-spacing: 1px; font-size: 1.25em; background-color: rgba(255,255,255,0.42); -moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 10px;}
-
-#graph{ min-height:96%;}
-
-
 
 /* #Tablet (Portrait)
 ================================================== */    
+/* Note:Design for a width of 768px */
 
-    /* Note: Design for a width of 768px */
+@media only screen and (min-width:768px) and (max-width:959px) {
+  #home, #building, #zoo, #about, #feed, #stats, #graphs, #tweet, #data {
+    width:768px;
+    height:100%;
+    position:absolute;
+    background:transparent;
+  }
+  .mapcontent {
+    background-image:url('../images/maps.png');
+    background-repeat:no-repeat;
+    margin:0px;
+    padding:0px;
+    height:808px;
+    width:768px;
+    position:absolute;
+  }
+  .mapcontent img {
+    width:200px;
+    height:200px;
+  }
+  .hugh, .ioct, .queens, .campus, .kimberlin {
+    position:absolute;
+  }
+  .hugh {
+    left:306px;
+    top:327px;
+  }
+  .ioct {
+    left:127px;
+    top:552px;
+  }
+  .queens {
+    left:486px;
+    top:535px;
+  }
+  .campus {
+    left:111px;
+    top:124px;
+  }
+  .kimberlin {
+    left:468px;
+    top:106px;
+  }
+  .articleimg {
+    width:100%;
+    margin:auto;
+  }
+  video {
+    background:silver;
+    width:768px;
+    height:1024px;
+    margin:0;
+    padding:0;
+    border:0;
+    padding:0;
+  }
 
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-    body {background-image:url('../images/wood.jpg');}
-     #home, #building, #zoo, #about, #feed, #stats, #graphs, #tweet, #data  { width: 768px; height:100%; position:absolute; background:transparent;}
-    #footer {
-        -webkit-box-sizing: border-box;
-        border:0px;
-        padding: 0px;
-        height: 40px;
-        background-color:rgba(20, 20, 20, .7);
-        position: absolute;
-        top:0px;
-        text-align:center;
-        width:100%;
-        /*background-image:url('images/note_bottom.jpg');*/
-    }
-    .content {
-        
-        width:90%;
-        margin:auto;
-        padding:10px;
-        margin-top:20px;
-        margin-bottom:10px;
-        line-height:1.5em;
-        background-color:#fff;
-        border: 0px;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        overflow-y:scroll;
-    }
-    .content h2 {
-        font-family: Georgia, "Times New Roman", Times, serif;
-        color: #66bcfa;
-        padding: 5px 0;
-        font-style:italic;
-    }
-    
-    .mapcontent {
-        background-image:url('../images/maps.png');
-        background-repeat:no-repeat;
-        margin: 0px;
-        padding: 0px;
-        height: 808px;
-        width: 768px;
-        position: absolute;
-    }
-    
-    .mapcontent img {
-        width:200px;
-        height:200px;
-    }
-    
-    .mapcontent a {
-    }
-    
-    .hugh {
-        margin: 0px;
-        padding: 0px;
-        height: 200px;
-        width: 200px;
-        position: absolute;
-        left: 306px;
-        top: 327px;
-    }
-    .ioct {
-        margin: 0px;
-        padding: 0px;
-        height: 200px;
-        width: 200px;
-        position: absolute;
-        left: 127px;
-        top: 552px;
-    }
-    .queens {
-        margin: 0px;
-        padding: 0px;
-        height: 200px;
-        width: 200px;
-        position: absolute;
-        left: 486px;
-        top: 535px;
-    }
-    .campus {
-        margin: 0px;
-        padding: 0px;
-        height: 200px;
-        width: 200px;
-        position: absolute;
-        left: 111px;
-        top: 124px;
-    }
-    .kimberlin {
-        margin: 0px;
-        padding: 0px;
-        height: 200px;
-        width: 200px;
-        position: absolute;
-        left: 468px;
-        top: 106px;
-    }
-    
+} /* END #Tablet (Portrait) */
 
-    
-    .innercontent {
-    }
-    
-    .articleimg {
-        width:100%;
-        margin:auto;
-    }
-    
-    video {
-        background: silver;
-        width:768px;
-        height:1024px;
-        margin:0;
-        padding:0;
-        border:0;
-        padding:0;
-    }
-    
-    .totalizer {width:25%; float:left;}
-    .thermoimg {width:100%;}
-    .hometext {}
-    .graphloader {width:75%;background-color:#444;float:left;}
-    .graphlinker {display:none;}
 
-}
-
-.textbox {
+/* #Mobile (Portrait) 
+================================================== */
+/* Note:Design for a width of 320px */
+    
+@media only screen and (max-width:767px) {
+  h1{font-size:1.2em;}
+  #home, #building, #zoo, #about, #feed, #stats, #graphs, #tweet, #data {
+    width:320px;
+    padding:0px;
+    background:transparent;
+    background-image:url('../images/wood.jpg');
+    height:100%;
+    position:absolute;
+  }
+  .content {
+    width:100%;
+    padding:0;
+    margin:0;
+    position:absolute;
+    z-index:1;
+  }
+  .mapcontent {
+    background-image:url('../images/mapsmini.png');
+    background-repeat:no-repeat;
+    margin:0px;
+    padding:0px;
+    height:337px;
+    width:320px;
+    position:absolute;
+  }
+  .mapcontent a,
+  .mapcontent img {
+    width:80px;
+    height:80px;
+  }
+  .mapcontent a {
+    display:block;
+  }
+  .hugh, .ioct, .queens, .campus, .kimberlin {
+    height:80px;
+    width:80px;
+    position:absolute;
+  }
+  .hugh {
+    left:125px;
+    top:129px;
+  }
+  .ioct {
+    left:49px;
+    top:226px;
+  }
+  .queens {
+    left:200px;
+    top:226px;
+  }
+  .campus {
+    left:28px;
+    top:45px;
+  }
+  .kimberlin {
+    left:209px;
+    top:37px;
+  }
+  video {
+    background:silver;
+    width:320px;
+    height:427px;
+    margin:0;
+    padding:0;
+    border:0;
+    padding:0;
+  }
+  .content h2 {
+    font-size:1.1em;
+  }
+  .textbox {
     width:90%;
     height:70%;
     margin:auto;
@@ -249,222 +282,50 @@ body {background-image:url('../images/wood.jpg'); background-color:#afc5e9; back
     font-size:2em;
     padding:10px;
     background-color:rgba(255, 255, 255, .9);
-    text-shadow: black 0 0 0px;
+    text-shadow:black 0 0 0px;
     color:#444;
-    -moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 10px;
-}
-    
-    
-/*    #Mobile (Portrait) 
-================================================== */
-    
-    /* Note: Design for a width of 320px */
-    
-@media only screen and (max-width: 767px) {
-    body {background-image:url('../images/wood.jpg'); background-color:#afc5e9; background-position: bottom; margin:auto; background-attachment:fixed; background-size:100%; height:100%; -moz-background-size: 100%; overflow:hidden;}
-    h1{font-size:1.2em;}
-    #home, #building, #zoo, #about, #feed, #stats, #graphs, #tweet, #data { width: 320px;  padding:0px; background:transparent; background-image:url('../images/wood.jpg'); height:100%; position:absolute;}
-    #footer {
-        -webkit-box-sizing: border-box;
-        border:0px;
-        padding: 0px;
-        height: 40px;
-        background-color:rgba(20, 20, 20, .7);
-        position: absolute;
-        top:0px;
-        text-align:center;
-        width:100%;
-        /*background-image:url('images/note_bottom.jpg');*/
-    }
-    .content {
-         width:100%;
-        padding:0;
-        margin:0;
-        line-height:1.5em;
-        background-color:#fff;
-        border: 0px;
-        position:absolute;
-        z-index:1;
-    }
-    
-    .mapcontent {
-        background-image:url('../images/mapsmini.png');
-        background-repeat:no-repeat;
-        margin: 0px;
-        padding: 0px;
-        height: 337px;
-        width: 320px;
-        position: absolute;
-    }
-    .mapcontent a {
-        display: block;
-        width:80px;
-        height:80px;
-    }
-    .mapcontent img {
-        width:80px;
-        height:80px;
-    }
-    
-    .hugh {
-        margin: 0px;
-        padding: 0px;
-        height: 80px;
-        width: 80px;
-        position: absolute;
-        left: 125px;
-        top: 129px;
-    }
-    .ioct {
-        margin: 0px;
-        padding: 0px;
-        height: 80px;
-        width: 80px;
-        position: absolute;
-        left: 49px;
-        top: 226px;
-    }
-    .queens {
-        margin: 0px;
-        padding: 0px;
-        height: 80px;
-        width: 80px;
-        position: absolute;
-        left: 200px;
-        top: 226px;
-    }
-    .campus {
-        margin: 0px;
-        padding: 0px;
-        height: 80px;
-        width: 80px;
-        position: absolute;
-        left: 28px;
-        top: 45px;
-    }
-    .kimberlin {
-        margin: 0px;
-        padding: 0px;
-        height: 80px;
-        width: 80px;
-        position: absolute;
-        left: 209px;
-        top: 37px;
-    }
+    -moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;
+  }
+  .articleimg {
+    width:100%;
+    margin:auto;
+  }
 
-    video {
-        background: silver;
-        width:320px;
-        height:427px;
-        margin:0;
-        padding:0;
-        border:0;
-        padding:0;
-    }
-    .content h2 {
-        font-size:1.1em;
-        font-family: Georgia, "Times New Roman", Times, serif;
-        color: #66bcfa;
-        padding: 5px 0;
-        font-style:italic;
-    }    
+}/* END #Mobile (Portrait) */
 
-    .innercontent {
-    }
-    
-    .textbox {
-        width:90%;
-        height:70%;
-        margin:auto;
-        margin-top:10px;
-        font-size:2em;
-        padding:10px;
-        background-color:rgba(255, 255, 255, .9);
-        text-shadow: black 0 0 0px;
-        color:#444;
-        -moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 10px;
-    }
-    
-    .articleimg {
-        width:100%;
-        margin:auto;
-    }
-    
-    .totalizer {width:25%; float:left;}
-    .thermoimg {width:100%;}
-    .hometext {width: 75%; float:left;}
-    .graphlinker {visibility:visible; display:inherit; width:75%; float:left;}
-    .graphloader {display:none;}
-    #league .innercontent li {padding: 4px 3px; font-size: 1em; letter-spacing: 0; text-shadow: black 0 0 1px;}    
-}     
-    
-    
+
 /* #Mobile (Landscape)
 ================================================== */
+/* Note:Design for a width of 480px */
+    
+@media only screen and (min-width:480px) and (max-width:767px) {
+  body {
+    background-image:url('../images/iphonelandscape.jpg');
+    background-repeat:no-repeat;
+  }
+  h1{font-size:1.2em;}
+  #footer {
+    background-color:rgba(80, 20, 20, .9);
+  }
+  .content {
+    height:60%;
+  }
+  .content h2 {
+    font-size:1.1em;
+  }
+  .articleimg {
+    width:100%;
+    margin:auto;
+  }
 
-    /* Note: Design for a width of 480px */
-    
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-    body {background-image:url('../images/iphonelandscape.jpg'); background-color:#afc5e9; background-position: bottom; margin:auto; background-repeat:no-repeat; background-attachment:fixed; background-size:100%; height:100%; -moz-background-size: 100%; overflow:hidden;}
-    h1{font-size:1.2em;}
-    #home, #league, #tips, #total, #DMU, #info, #screen, .container { width: 100%; background:transparent; height:100%; position:absolute;}
-    #footer {
-        -webkit-box-sizing: border-box;
-        border:0px;
-        padding: 0px;
-        height: 40px;
-        background-color:rgba(80, 20, 20, .9);
-         position: absolute;
-         top:0px;
-        text-align:center;
-        width:100%;
-        /*background-image:url('images/note_bottom.jpg');*/
-    }
-    .content {
-        height:60%;
-        width:90%;
-        margin:auto;
-        padding:10px;
-        margin-top:20px;
-        margin-bottom:10px;
-        line-height:1.5em;
-        background-color:#fff;
-        border: 0px;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        overflow-y:scroll;
-    }
-    .content h2 {
-        font-size:1.1em;
-        font-family: Georgia, "Times New Roman", Times, serif;
-        color: #66bcfa;
-        padding: 5px 0;
-        font-style:italic;
-    }    
-    
-    .innercontent {
-    }
-    
-    .articleimg {
-        width:100%;
-        margin:auto;
-    }
-    
-    .totalizer {width:20%; float:left;}
-    .thermoimg {width:100%;}
-    .hometext {}
-    .graphlinker {visibility:visible; display:inherit; float:left;}
-    .graphloader {display:none;}
-    #league .innercontent li {padding: 4px 3px; font-size: 1em; letter-spacing: 0; text-shadow: black 0 0 1px;}
-}
-        
-    
+} /* END #Mobile (Landscape) */
+
+
 /* #Clearing
 ================================================== */
 
 /* Self Clearing Goodness */
-.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; } 
+.container:after { content:"\0020"; display:block; height:0; clear:both; visibility:hidden; } 
 
 /* Use clearfix class on parent to clear nested columns, 
 or wrap each row of columns in a <div class="row"> */
@@ -472,23 +333,21 @@ or wrap each row of columns in a <div class="row"> */
 .clearfix:after,
 .row:before,
 .row:after {
-    content: '\0020';
-    display: block;
-    overflow: hidden;
-    visibility: hidden;
-    width: 0;
-    height: 0; }
+  content:'\0020';
+  display:block;
+  overflow:hidden;
+  visibility:hidden;
+  width:0;
+  height:0; }
 .row:after,
-.clearfix:after { clear: both; }
+.clearfix:after { clear:both; }
 .row, 
-.clearfix { zoom: 1; }
-  
-/* You can also use a <br class="clear" /> to clear columns */
+.clearfix { zoom:1; }
 .clear {
-    clear: both;
-    display: block;
-    overflow: hidden;
-    visibility: hidden;
-    width: 0;
-    height: 0;
+  clear:both;
+  display:block;
+  overflow:hidden;
+  visibility:hidden;
+  width:0;
+  height:0;
 }
