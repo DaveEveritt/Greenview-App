@@ -28,22 +28,28 @@ function loadZones() {
         } else {
             zones[bldg_ids[i]] = "neutral";
         }
+        console.log(zones[bldg_ids[i]]); // get building states for images
     }
 // console.log(zones);
+// console.log(zones[bldg_ids[0]])
 }
+// function imageZone() {
+//     for (var i = 0; i < bldg_ids.length; i++) {}
+//         console.log(zones[bldg_ids[i]])
+//     }
+// }
 
 function loadProfile(bldg_id) {
-    return loadJSON("http://greenview.ecoconsulting.co.uk/data/profile_" + bldg_id + ".json");
-    // return loadJSON("data/profile_" + bldg_id + ".json");
+    // return loadJSON("http://greenview.ecoconsulting.co.uk/data/profile_" + bldg_id + ".json");
+    return loadJSON("data/profile_" + bldg_id + ".json");
 }
-
 function loadData(bldg_id) {
-    return loadJSON("http://greenview.ecoconsulting.co.uk/data/data_" + bldg_id + ".json");
-    // return loadJSON("data/data_" + bldg_id + ".json");
+    // return loadJSON("http://greenview.ecoconsulting.co.uk/data/data_" + bldg_id + ".json");
+    return loadJSON("data/data_" + bldg_id + ".json");
 }
 
 function showZone(elem_id,bldg_id) {
-    var bldg_state_video = '<video src="videos/' + bldg_id + '_' + zones[bldg_id] + '.m4v" poster="images/' + bldg_id + '_' + zones[bldg_id] + '.jpg" webkit-playsinline autoplay controls loop />';
+    var bldg_state_video = '<video src="videos/' + bldg_id + '_' + zones[bldg_id] + '.m4v" poster="images/posters/' + bldg_id + '_' + zones[bldg_id] + '.png" webkit-playsinline autoplay controls loop />';
     document.getElementById(elem_id).innerHTML = bldg_state_video;
 }
 
