@@ -26,13 +26,19 @@ function showMap() {
 }
 
 $(document).ready(function() {
+    refresh();
+    var interval = 1000 * 60 * 5; //refresh every 5 minutes
+    setInterval ( "refresh()", interval );
+});
+
+function refresh() {
     loadBuildings();
     showMap();
     if (localStorage.bldg_id > 0) {
         showBuilding(localStorage.bldg_id);
     }
-});
-
+    // console.log("I feel refreshed!");
+}
 
 function getZone(data) {
     var upper = data.upper.pop();
@@ -68,9 +74,7 @@ function showBuilding(bldg_id) {
     if (!localStorage.bldg_id) {
         localStorage.bldg_id = bldg_id;
     }
-    // currentBldg = bldg_id;
-    
-    console.log(localStorage.bldg_id);
+    // console.log(localStorage.bldg_id);
 }
 
 function loadJSON(sURL) {
