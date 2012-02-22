@@ -1,29 +1,26 @@
 var building_lookup = {};
 
 var buildings = [
-    {id: 15, padded_id: '0015', label: 'Campus Centre'},
-    {id: 69, padded_id: '0069', label: 'IOCT'},
-    {id: 111, padded_id: '0111', label: 'Kimberlin library'},
-    {id: 213, padded_id: '0213', label: 'Queens building'},
-    {id: 490, padded_id: '0490', label: 'Hugh Aston Building'}
+    {id: 15, padded_id: '0015', label: 'Campus Centre', cls: ".campus"},
+    {id: 69, padded_id: '0069', label: 'IOCT', cls: ".ioct"},
+    {id: 111, padded_id: '0111', label: 'Kimberlin library', cls: ".kimberlin"},
+    {id: 213, padded_id: '0213', label: 'Queens building', cls: ".queens"},
+    {id: 490, padded_id: '0490', label: 'Hugh Aston Building', cls: ".hugh"}
 ];
 
 $(document).ready(function() {
     for (var i = 0; i < buildings.length; i++) {
         building_lookup[buildings[i].id] = i;
         buildings[i].chart_data = loadChartData(buildings[i]);
-        buildings[i].zone = getCurrentReading(buildings[i].chart_data);
+        buildings[i].zone = getZone(buildings[i].chart_data);
         console.log(buildings[i].label + " is " + buildings[i].zone);
-        update_chart(buildings[i]);
+        var bldg_img = "images/buildings/" + buildings[i].padded_id + "_" + buildings[i].zone + ".png";
+        $(buildings[i].cls + " img").attr("src", bldg_img);
     }
-    console.log(buildings[0]);
-    console.log(buildings[0].id);
-    console.log(building_lookup);
-    console.log(building_lookup[buildings[0].id]);
 });
 
 
-function getCurrentReading(data) {
+function getZone(data) {
     var upper = data.upper.pop();
     var lower = data.lower.pop();
     var value = data.value.pop();
@@ -42,23 +39,21 @@ function loadChartData(bldg) {
 
 //    return loadJSON("http://greenview.ecoconsulting.co.uk/data/profile_" + bldg_id + ".json");
 
-function showZone(elem_id,bldg_id) {
-    var bldg_state_video = '<video src="videos/' + buildings[building_lookup[bldg_id]].padded_id + '_' + buildings[building_lookup[bldg_id]].zone + '.m4v" poster="images/posters/' + buildings[building_lookup[bldg_id]].padded_id + '_' + buildings[building_lookup[bldg_id]].zone + '.png" webkit-playsinline autoplay controls loop />';
-    document.getElementById(elem_id).innerHTML = bldg_state_video;
-}
-function showName(tag_name,bldg_id) {
-    var x = document.getElementsByTagName(tag_name);
-    for (i=0; i<x.length; i++) {
-        x[i].innerHTML = buildings[building_lookup[bldg_id]].label;
-    }
-    // FIX TRUMPS!!
-    trumps(buildings[building_lookup[bldg_id]].padded_id); //let the right trump in
-}
-function trumps(bldg_id) {
-    var x = document.getElementById("trumpsbox");
-    x.innerHTML = '<img src="trumps/' + buildings[building_lookup[bldg_id]] + '.png" width="100%" style="max-width: 768px" />';
-}
 
+function showBuilding(bldg_id) {
+    var bldg = buildings[building_lookup[bldg_id]];
+    
+    var bldg_state_video = '<video src="videos/' + bldg.padded_id + '_' + bldg.zone + '.m4v" poster="images/posters/' + bldg.padded_id + '_' + bldg.zone + '.png" webkit-playsinline autoplay controls loop />';
+    document.getElementById("video").innerHTML = bldg_state_video;
+    var h1 = document.getElementsByTagName("h1");
+    for (i=0; i<h1.length; i++) {
+        h1[i].innerHTML = bldg.label;
+    }
+    var trumps = document.getElementById("trumpsbox");
+    trumps.innerHTML = '<img src="trumps/' + bldg.padded_id + '.png" width="100%" style="max-width: 768px" />';
+    
+    update_chart(bldg);
+}
 
 function loadJSON(sURL) {
     var ajax = new XMLHttpRequest();
