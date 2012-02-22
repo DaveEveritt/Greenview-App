@@ -1,4 +1,5 @@
 var building_lookup = {};
+var currentBldg = 0;
 
 var buildings = [
     {id: 15, padded_id: '0015', label: 'Campus Centre', cls: ".campus"},
@@ -8,14 +9,27 @@ var buildings = [
     {id: 490, padded_id: '0490', label: 'Hugh Aston Building', cls: ".hugh"}
 ];
 
-$(document).ready(function() {
+function loadBuildings() {
     for (var i = 0; i < buildings.length; i++) {
         building_lookup[buildings[i].id] = i;
         buildings[i].chart_data = loadChartData(buildings[i]);
         buildings[i].zone = getZone(buildings[i].chart_data);
-        console.log(buildings[i].label + " is " + buildings[i].zone);
+        // console.log(buildings[i].label + " is " + buildings[i].zone);
+    }
+}
+
+function showMap() {
+    for (var i = 0; i < buildings.length; i++) {
         var bldg_img = "images/buildings/" + buildings[i].padded_id + "_" + buildings[i].zone + ".png";
         $(buildings[i].cls + " img").attr("src", bldg_img);
+    }
+}
+
+$(document).ready(function() {
+    loadBuildings();
+    showMap();
+    if (localStorage.bldg_id > 0) {
+        showBuilding(localStorage.bldg_id);
     }
 });
 
@@ -36,13 +50,10 @@ function getZone(data) {
 function loadChartData(bldg) {
     return loadJSON("data/chart_" + bldg.padded_id + ".json");
 }
-
 //    return loadJSON("http://greenview.ecoconsulting.co.uk/data/profile_" + bldg_id + ".json");
-
 
 function showBuilding(bldg_id) {
     var bldg = buildings[building_lookup[bldg_id]];
-    
     var bldg_state_video = '<video src="videos/' + bldg.padded_id + '_' + bldg.zone + '.m4v" poster="images/posters/' + bldg.padded_id + '_' + bldg.zone + '.png" webkit-playsinline autoplay controls loop />';
     document.getElementById("video").innerHTML = bldg_state_video;
     var h1 = document.getElementsByTagName("h1");
@@ -53,6 +64,13 @@ function showBuilding(bldg_id) {
     trumps.innerHTML = '<img src="trumps/' + bldg.padded_id + '.png" width="100%" style="max-width: 768px" />';
     
     update_chart(bldg);
+    
+    if (!localStorage.bldg_id) {
+        localStorage.bldg_id = bldg_id;
+    }
+    // currentBldg = bldg_id;
+    
+    console.log(localStorage.bldg_id);
 }
 
 function loadJSON(sURL) {
