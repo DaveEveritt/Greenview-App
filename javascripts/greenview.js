@@ -54,9 +54,9 @@ function getZone(data) {
 }
 
 function loadChartData(bldg) {
-    return loadJSON("data/chart_" + bldg.padded_id + ".json");
+    // return loadJSON("data/chart_" + bldg.padded_id + ".json");
+    return loadJSON("http://greenview.ecoconsulting.co.uk/data/chart_" + bldg.padded_id + ".json");
 }
-//    return loadJSON("http://greenview.ecoconsulting.co.uk/data/profile_" + bldg_id + ".json");
 
 function showBuilding(bldg_id) {
     var bldg = buildings[building_lookup[bldg_id]];
@@ -179,8 +179,7 @@ function update_chart(bldg) {
             color: 'rgba(213, 68, 68, .5)',
             threshold: 149,
             fillColor: 'rgba(213, 68, 68, .1)',
-            lineColor: 'rgba(193, 48, 48, .6)',
-            linewidth: 1
+            lineColor: 'rgba(193, 48, 48, .2)'
         },
         {
             name: 'Actual energy use',
@@ -201,7 +200,7 @@ function update_chart(bldg) {
             data: bldg.chart_data.lower,
             color: 'rgba(68, 213, 68, .9)',
             fillColor: 'rgba(68, 213, 68, .1)',
-            lineColor: 'rgba(68, 213, 68, .6)'
+            lineColor: 'rgba(68, 213, 68, .2)'
         }
     ];
     var chart = new Highcharts.Chart(options);
