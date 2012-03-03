@@ -1,5 +1,5 @@
 /* 
-* Skeleton V1.0.2
+* adapted from Skeleton V1.0.2
 * Copyright 2011, Dave Gamache
 * www.getskeleton.com
 * Free to use under the MIT license.
@@ -25,8 +25,7 @@ Table of Contents
 
 .ui-page {margin:auto;}
 
-/*styles for up/down list
-++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* styles for up/down list */
 .ui-li-up,
 .ui-li-dn { text-shadow:0 0px 0px #f6f6f6; color:#fff;}
 .ui-li-up { background-color:#5ed369;}
@@ -40,35 +39,45 @@ ul + p {margin-top:1em;} /* space above all paragraphs when after lists */
 ================================================== */
 body {
   background-image:url('../images/wood.jpg');
-  background-color:#afc5e9;
   background-position:bottom;
-  margin:auto;
   background-attachment:fixed;
+  -moz-background-size:100%;
   background-size:100%;
   height:100%;
-  -moz-background-size:100%;
   overflow:hidden;
 }
-#home, #tips, #total, #DMU, #info, #screen, .container {
+
+#home, #tips, #total, #DMU, #info, #screen {
   width:100%;
   padding:0;
   height:100%;
   position:absolute;
   background:transparent;
 }
-#footer {
-  -webkit-box-sizing:border-box;
-  border:0px;
-  padding:0px;
-  height:40px;
-  background-color:#f00;
-  background-color:rgba(20, 20, 20, .7);
+.footer {
   position:absolute;
-  top:0px;
-  text-align:center;
+  bottom:0;
+  border:none;
+  margin:0;
+  padding:0;
   width:100%;
 }
-
+.footer img {
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+.footer h1 {
+  position:absolute;
+  bottom:0;
+  padding:0;
+  margin:0;
+  background:transparent;
+  text-align:center;
+  width:100%;
+  z-index:1000;
+  text-shadow: 0px 0px 3px #222;
+}
 .content {
   width:90%;
   margin:auto;
@@ -140,7 +149,7 @@ body {
 /* Note:Design for a width of 768px */
 
 @media only screen and (min-width:768px) and (max-width:959px) {
-  #home, #building, #zoo, #about, #feed, #stats, #graphs, #tweet, #data {
+  #home, #building, #zoo, #about, #news, #stats, #graphs, #tweet, #data {
     width:768px;
     height:100%;
     position:absolute;
@@ -204,8 +213,8 @@ body {
 /* Note:Design for a width of 320px */
     
 @media only screen and (max-width:767px) {
-  h1{font-size:1.2em;}
-  #home, #building, #zoo, #about, #feed, #stats, #graphs, #tweet, #data {
+  h1 {font-size:1.2em;}
+  #home, #building, #zoo, #about, #news, #stats, #graphs, #tweet, #data {
     width:320px;
     padding:0px;
     background:transparent;
@@ -303,10 +312,7 @@ body {
     background-image:url('../images/iphonelandscape.jpg');
     background-repeat:no-repeat;
   }
-  h1{font-size:1.2em;}
-  #footer {
-    background-color:rgba(80, 20, 20, .9);
-  }
+  h1 {font-size:1.2em;}
   .content {
     height:60%;
   }
@@ -323,9 +329,6 @@ body {
 
 /* #Clearing
 ================================================== */
-
-/* Self Clearing Goodness */
-.container:after { content:"\0020"; display:block; height:0; clear:both; visibility:hidden; } 
 
 /* Use clearfix class on parent to clear nested columns, 
 or wrap each row of columns in a <div class="row"> */

@@ -18,17 +18,11 @@
 -----------------------------------------------------------------------------------------------------------*/
 
 .ui-bar-a {
-	border: 1px solid #004b23 /*{a-bar-border}*/;
-	background: #004b23 /*{a-bar-background-color}*/;
+	
 	color: #ffffff /*{a-bar-color}*/;
 	font-weight: bold;
 	text-shadow:  0  /*{a-bar-shadow-x}*/  1px  /*{a-bar-shadow-y}*/  1px  /*{a-bar-shadow-radius}*/ #444444 /*{a-bar-shadow-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #005226 /*{a-bar-background-start}*/), to( #00431F /*{a-bar-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient(top, #005226 /*{a-bar-background-start}*/, #00431F /*{a-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient(top, #005226 /*{a-bar-background-start}*/, #00431F /*{a-bar-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient(top, #005226 /*{a-bar-background-start}*/, #00431F /*{a-bar-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient(top, #005226 /*{a-bar-background-start}*/, #00431F /*{a-bar-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient(top, #005226 /*{a-bar-background-start}*/, #00431F /*{a-bar-background-end}*/);
+
 }
 
 .ui-bar-a .ui-link-inherit {
@@ -38,19 +32,15 @@
 	color:  #7cc4e7  /*{a-bar-link-color}*/;
 	font-weight: bold;
 }
-
 .ui-bar-a .ui-link:hover {
 	color:  #2489CE  /*{a-bar-link-hover}*/;
 }
-
 .ui-bar-a .ui-link:active {
 	color:  #ff0000  /*{a-bar-link-active}*/;
 }
-
 .ui-bar-a .ui-link:visited {
     color:  #2489CE  /*{a-bar-link-visited}*/;
 }
-
 .ui-bar-a,
 .ui-bar-a input,
 .ui-bar-a select,
@@ -59,7 +49,7 @@
 	 font-family: Helvetica, Arial, sans-serif  /*{global-font-family}*/;
 }
 .ui-body-a {
-	border: 1px solid #546931 /*{a-body-border}*/;
+	border: 0px solid #546931 /*{a-body-border}*/;
 	color: #ffffff /*{a-body-color}*/;
 	text-shadow:  0  /*{a-body-shadow-x}*/  1px  /*{a-body-shadow-y}*/  0  /*{a-body-shadow-radius}*/ #444444 /*{a-body-shadow-color}*/;
 	background: #004b23 /*{a-body-background-color}*/;
@@ -100,7 +90,7 @@
 }
 
 .ui-btn-up-a {
-	border: 1px solid #352516 /*{a-bup-border}*/;
+	border: 0px solid #352516 /*{a-bup-border}*/;
 	background: #352516 /*{a-bup-background-color}*/;
 	font-weight: bold;
 	color: #ffffff /*{a-bup-color}*/;

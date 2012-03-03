@@ -37,7 +37,6 @@ function refresh() {
     if (localStorage.bldg_id > 0) {
         showBuilding(localStorage.bldg_id);
     }
-    // console.log("I feel refreshed!");
 }
 
 function getZone(data) {
@@ -60,21 +59,20 @@ function loadChartData(bldg) {
 
 function showBuilding(bldg_id) {
     var bldg = buildings[building_lookup[bldg_id]];
-    var bldg_state_video = '<video src="videos/' + bldg.padded_id + '_' + bldg.zone + '.m4v" poster="images/posters/' + bldg.padded_id + '_' + bldg.zone + '.png" webkit-playsinline autoplay controls loop />';
+    var bldg_state_video = '<video src="videos/' + bldg.padded_id + '_' + bldg.zone + '.m4v" poster="images/posters/' + bldg.padded_id + '_' + bldg.zone + '.jpg" webkit-playsinline autoplay controls loop />';
     document.getElementById("video").innerHTML = bldg_state_video;
     var h1 = document.getElementsByTagName("h1");
     for (i=0; i<h1.length; i++) {
-        h1[i].innerHTML = bldg.label;
+        h1[i].innerHTML = bldg.label + ' - state: ' + bldg.zone;
     }
     var trumps = document.getElementById("trumpsbox");
-    trumps.innerHTML = '<img src="trumps/' + bldg.padded_id + '.png" width="100%" style="max-width: 768px" />';
+    trumps.innerHTML = '<img src="images/trumps/' + bldg.padded_id + '_' + bldg.zone +  '.png" width="100%" style="max-width: 768px" />';
     
     update_chart(bldg);
     
     if (!localStorage.bldg_id) {
         localStorage.bldg_id = bldg_id;
     }
-    // console.log(localStorage.bldg_id);
 }
 
 function loadJSON(sURL) {

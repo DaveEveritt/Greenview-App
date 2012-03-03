@@ -29,7 +29,6 @@
         <script src="javascripts/add2home.js"></script>
         <script src="javascripts/highcharts/highcharts.js"></script>
         <script src="javascripts/highcharts/themes/grid.js"></script>
-        <!-- // <script src="javascripts/highcharts/graphs.js"></script> -->
         <script src="javascripts/greenview.js"></script>
 
         <!-- CSS
@@ -37,8 +36,8 @@
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jquery.mobile-1.0b3.min.css">
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jquery.mobile.scrollview.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/base.css">
-        <link rel="stylesheet" type="text/css" href="stylesheets/skeleton.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/zoo.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/skeleton.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/add2home.css">
 
         <!-- Favicons
@@ -59,22 +58,25 @@
             <div data-role="header" data-id="head">
                 <div data-role="navbar" class="nav-glyphish-example">
                     <ul>
-                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="left" data-icon="myapp-map">Map</a></li>
-                        <li><a href="#about" data-role="button" data-theme="a" data-icon="info">About</a></li>
+                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="left" data-icon="myapp-map">Home</a></li>
+                        <li><a href="#about" data-role="button" data-theme="a" data-icon="info">Story</a></li>
+                        <li><a href="#news" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-league">News</a></li>
                     </ul>
                 </div>
             </div>
             <div data-role="content">
                 <div class="mapcontent">
-                    <a class="campus"    href="#building" onclick="showBuilding( 15);"><img src="images/buildings/0015_neutral.png" alt="Campus Centre" /></a>
-                    <a class="ioct"      href="#building" onclick="showBuilding( 69);"><img src="images/buildings/0069_neutral.png" alt="IOCT" /></a>
-                    <a class="kimberlin" href="#building" onclick="showBuilding(111);"><img src="images/buildings/0111_neutral.png" alt="Kimberlin Library" /></a>
-                    <a class="queens"    href="#building" onclick="showBuilding(213);"><img src="images/buildings/0213_neutral.png" alt="Queen's Building" /></a>
-                    <a class="hugh"      href="#building" onclick="showBuilding(490);"><img src="images/buildings/0490_neutral.png" alt="Hugh Aston Building" /></a>
+                    <a class="campus"    href="#building" onClick="showBuilding( 15);"><img src="images/buildings/0015_neutral.png" alt="Campus Centre" /></a>
+                    <a class="ioct"      href="#building" onClick="showBuilding( 69);"><img src="images/buildings/0069_neutral.png" alt="IOCT" /></a>
+                    <a class="kimberlin" href="#building" onClick="showBuilding(111);"><img src="images/buildings/0111_neutral.png" alt="Kimberlin Library" /></a>
+                    <a class="queens"    href="#building" onClick="showBuilding(213);"><img src="images/buildings/0213_neutral.png" alt="Queen's Building" /></a>
+                    <a class="hugh"      href="#building" onClick="showBuilding(490);"><img src="images/buildings/0490_neutral.png" alt="Hugh Aston Building" /></a>
                 </div>
             </div>
 
-            <div data-role="footer" data-position="fixed" data-id="lev1"></div>
+            <div class="footer">
+                <img src="images/grass.png" alt="Grass">
+            </div>
         </div><!-- container -->
 
 
@@ -85,8 +87,9 @@
             <div data-role="header" data-id="head">
                 <div data-role="navbar" class="nav-glyphish-example">
                     <ul>
-                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="left" data-icon="myapp-map">Map</a></li>
-                        <li><a href="#about" data-role="button" data-theme="a" data-icon="info">About</a></li>
+                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="left" data-icon="myapp-map">Home</a></li>
+                        <li><a href="#about" data-role="button" data-theme="a" data-icon="info">Story</a></li>
+                        <li><a href="#news" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-league">News</a></li>
                     </ul>
                 </div>
             </div>
@@ -96,61 +99,92 @@
                 <img src="images/story3.png" alt="Story" class="story">
             </div>
 
-            <div data-role="footer" data-position="fixed" data-id="lev1">
+            <div class="footer">
+                <img src="images/grass.png" alt="Grass">
             </div>
         </div><!-- container -->
 
 
-        <!-- Feed Page Layout: Twitter feed (UNUSED)
+        <!-- Feed Page Layout: Twitter feed
         ================================================== -->
 
-        <div data-role="page" id="feed">
+        <div data-role="page" id="news">
             <div data-role="header" data-id="head">
                 <div data-role="navbar" class="nav-glyphish-example">
                     <ul>
                         <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
-                        <li><a href="#about" data-role="button" data-theme="a" data-iconpos="top" data-icon="info">About</a></li>
-                        <li><a href="#feed" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-league">Twitter Feed</a></li>
+                        <li><a href="#about" data-role="button" data-theme="a" data-iconpos="top" data-icon="info">Story</a></li>
+                        <li><a href="#news" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-league">News</a></li>
 
                     </ul>
                 </div>
             </div>
             <div data-role="content">
-                <!-- <div class="textbox">
-                    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-                    <script>
-                    //replace with Gareth's nice styles
-                     new TWTR.Widget({
-                         version: 2,
-                         type: 'profile',
-                         rpp: 6,
-                         interval: 30000,
-                         width: 'auto',
-                         height: 250,
-                         theme: {
-                             shell: {
-                                 background: '#ffffff',
-                                 color: '#000000'
-                             },
-                             tweets: {
-                                 background: '#ffffff',
-                                 color: '#000000',
-                                 links: '#368713'
-                             }
-                         },
-                         features: {
-                             scrollbar: false,
-                             loop: false,
-                             live: false,
-                             behavior: 'all'
-                         }
-                     }).render().setUser('greenviewdmu').start();
-                    </script>
-                </div> -->
+<script type="text/javascript">// <![CDATA[
+
+jQuery(document).ready(function() {
+
+    // set your twitter id
+
+    var user = 'spacecentre';
+
+      
+
+    // using jquery built in get json method with twitter api, return only one result
+
+   jQuery.getJSON('https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&exclude_replies=true&screen_name=spacecentre&count=1&callback=?', function(data)      {
+
+          
+
+        // result returned
+
+        var tweet = data[0].text;
+
+      
+
+        // process links and reply
+
+        tweet = tweet.replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, function(url) {
+
+            return '<a href="'+url+'">'+url+'</a>';
+
+        }).replace(/B@([_a-z0-9]+)/ig, function(reply) {
+
+            return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
+
+        });
+
+      
+
+        // output the result
+
+        jQuery("#tweet").html(tweet);
+
+    }); 
+
+      
+
+});
+
+// ]]></script>
+
+<div id="twitwrapper">
+
+<div id="twitbot">
+
+<div id="twitmeme">
+
+<p id="tweet"> </p>
+
+</div>
+
+</div>
+
+</div>
             </div>
 
-            <div data-role="footer" data-position="fixed" data-id="lev1">
-                <h1>BUILDING NAME</h1>
+            <div class="footer">
+                <img src="images/grass.png" alt="Grass">
             </div>
         </div><!-- container -->
 
@@ -177,7 +211,8 @@
                 <!-- script inserts video -->
             </div>
 
-            <div data-role="footer" data-position="fixed" data-id="lev2">
+            <div class="footer">
+                <img src="images/grass.png" alt="Grass">
                 <h1>BUILDING NAME</h1>
             </div>
         </div><!-- container -->
@@ -204,35 +239,12 @@
                 </div>
             </div>
 
-            <div data-role="footer" data-position="fixed" data-id="lev2">
+            <div class="footer">
+                <img src="images/grass.png" alt="Grass">
                 <h1>BUILDING NAME</h1>
             </div>
         </div><!-- container -->
 
-
-        <!-- Tweet Page - send a tweet (UNUSED)
-        ================================================== -->
-
-        <div data-role="page" id="tweet">
-            <div data-role="header" data-id="head">
-                <div data-role="navbar" class="nav-glyphish-example">
-                    <ul>
-                        <li><a href="#zoo" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-home">Home</a></li>
-                        <li><a href="#building" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-watch">Watch</a></li>
-                        <li><a href="#graphs" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-graph">Graphs</a></li>
-                        <li><a href="#stats" data-role="button" data-theme="a" data-iconpos="top" data-icon="myapp-about" data-transition="flip">About Me</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div data-role="content">
-                <div class="textbox">
-                    Send a tweet!!!
-                </div>
-            </div>
-            <div data-role="footer" data-position="fixed">
-                <h1>BUILDING NAME</h1>
-            </div>
-        </div><!-- container -->
 
         <!-- Graphs page - view detailed graphs
         ================================================== -->
@@ -252,7 +264,8 @@
                 <div id="graph"></div>
             </div>
 
-            <div data-role="footer" data-position="fixed">
+            <div class="footer">
+                <img src="images/grass.png" alt="Grass">
                 <h1>BUILDING NAME</h1>
             </div>
         </div><!-- container -->
