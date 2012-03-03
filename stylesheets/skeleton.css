@@ -15,6 +15,47 @@ Table of Contents
   #Clearing
 */
     
+html, body, div, object, h1, h2, p, a, cite, em, img, strong, ul, li, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html, body { 
+  background-image:url('../images/wood.jpg'); background-color:#afc5e9; background-position: bottom; margin:auto; background-attachment:fixed; background-size:100%; height:100%; -moz-background-size: 100%;
+  overflow:hidden;
+  font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444; 
+  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+  -webkit-text-size-adjust: none;
+  height:100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a, a:visited { color: #fff; text-decoration: none; outline: 0; }
+a:hover, a:focus { color: #FFB90F; }
+p a, p a:visited { line-height: inherit; }
+
+h1, h2 { 
+  font-family: AmericanTypewriter-Bold, "Geneva", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color:#fff;
+}
+h1 { font-size: 2em; line-height:1.3em;margin-bottom: 14px;}
+h2 { font-size: 1.5em; line-height: 1.2em; margin-bottom: 5px; margin-top:10px; color: #66bcfa;}
+
+p { margin: 0 0 20px 0; }
+p img { margin: 0; }
+
+em { font-style: italic; }
+strong { font-weight: bold; color: #333; }
+
+
 /* custom icons */
 .nav-glyphish-example .ui-icon { width:20px!important; height:20px!important; margin-left:-10px !important; box-shadow:none!important; -moz-box-shadow:none!important; -webkit-box-shadow:none!important; -webkit-border-radius:0!important; border-radius:0!important; }
 .ui-icon-myapp-map   {background:url("../images/103-map.png") no-repeat !important;}
@@ -45,6 +86,7 @@ body {
   background-size:100%;
   height:100%;
   overflow:hidden;
+  line-height: 1; }
 }
 
 #home, #tips, #total, #DMU, #info, #screen {
@@ -79,9 +121,9 @@ body {
   text-shadow: 0px 0px 3px #222;
 }
 .content {
-  width:90%;
+  width:80%;
   margin:auto;
-  padding:10px;
+  padding:50px;
   margin-top:20px;
   margin-bottom:10px;
   line-height:1.5em;
@@ -129,7 +171,7 @@ body {
   -webkit-border-radius:10px;
   border-radius:10px;
 }
-#graph{ min-height:96%;}
+#graph { min-height:96%;}
 .textbox {
   width:90%;
   height:70%;
@@ -165,31 +207,25 @@ body {
     position:absolute;
   }
   .mapcontent img {
-    width:200px;
-    height:200px;
+    width:200px; height:200px;
   }
   .hugh, .ioct, .queens, .campus, .kimberlin {
     position:absolute;
   }
   .hugh {
-    left:306px;
-    top:327px;
+    left:306px; top:327px;
   }
   .ioct {
-    left:127px;
-    top:552px;
+    left:127px; top:552px;
   }
   .queens {
-    left:486px;
-    top:535px;
+    left:486px; top:535px;
   }
   .campus {
-    left:111px;
-    top:124px;
+    left:111px; top:124px;
   }
   .kimberlin {
-    left:468px;
-    top:106px;
+    left:468px; top:106px;
   }
   .articleimg {
     width:100%;
@@ -227,7 +263,7 @@ body {
     padding:0;
     margin:0;
     position:absolute;
-    z-index:1;
+    z-index:0;
   }
   .mapcontent {
     background-image:url('../images/mapsmini.png');
@@ -240,36 +276,29 @@ body {
   }
   .mapcontent a,
   .mapcontent img {
-    width:80px;
-    height:80px;
+    width:80px; height:80px;
   }
   .mapcontent a {
     display:block;
   }
   .hugh, .ioct, .queens, .campus, .kimberlin {
-    height:80px;
-    width:80px;
+    height:80px; width:80px;
     position:absolute;
   }
   .hugh {
-    left:125px;
-    top:129px;
+    left:125px; top:129px;
   }
   .ioct {
-    left:49px;
-    top:226px;
+    left:49px; top:226px;
   }
   .queens {
-    left:200px;
-    top:226px;
+    left:200px; top:226px;
   }
   .campus {
-    left:28px;
-    top:45px;
+    left:28px; top:45px;
   }
   .kimberlin {
-    left:209px;
-    top:37px;
+    left:209px; top:37px;
   }
   video {
     background:silver;

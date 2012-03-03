@@ -31,6 +31,14 @@ $(document).ready(function() {
     setInterval ( "refresh()", interval );
 });
 
+function playVideo(state) {
+    if (state===true) {
+        document.getElementById("bldvideo").play();
+    } else {
+        document.getElementById("bldvideo").pause();
+    }
+}
+
 function refresh() {
     loadBuildings();
     showMap();
@@ -57,11 +65,11 @@ function loadChartData(bldg) {
     return loadJSON("http://greenview.ecoconsulting.co.uk/data/chart_" + bldg.padded_id + ".json");
 }
 
+var h1 = document.getElementsByTagName("h1");
 function showBuilding(bldg_id) {
     var bldg = buildings[building_lookup[bldg_id]];
-    var bldg_state_video = '<video src="videos/' + bldg.padded_id + '_' + bldg.zone + '.m4v" poster="images/posters/' + bldg.padded_id + '_' + bldg.zone + '.jpg" webkit-playsinline autoplay controls loop />';
+    var bldg_state_video = '<video id="bldvideo" src="videos/' + bldg.padded_id + '_' + bldg.zone + '.m4v" poster="images/posters/' + bldg.padded_id + '_' + bldg.zone + '.jpg" webkit-playsinline autoplay controls loop />';
     document.getElementById("video").innerHTML = bldg_state_video;
-    var h1 = document.getElementsByTagName("h1");
     for (i=0; i<h1.length; i++) {
         h1[i].innerHTML = bldg.label + ' - state: ' + bldg.zone;
     }
@@ -73,10 +81,11 @@ function showBuilding(bldg_id) {
     if (!localStorage.bldg_id) {
         localStorage.bldg_id = bldg_id;
     }
+    playVideo(true);
 }
 
+var ajax = new XMLHttpRequest();
 function loadJSON(sURL) {
-    var ajax = new XMLHttpRequest();
     ajax.open( "GET", sURL, false );
     ajax.setRequestHeader("Content-type", "application/json");
     ajax.send(null);
@@ -84,7 +93,7 @@ function loadJSON(sURL) {
         return JSON.parse(ajax.responseText);
     }
     else {
-        alert("Error executing XMLHttpRequest call! [url: " + sURL + ", status: " + ajax.status + "]");
+        alert("Could not retrieve data! [url: " + sURL + ", status: " + ajax.status + "]");
     }
 }
 
@@ -111,8 +120,8 @@ function update_chart(bldg) {
 //            x: 80,
             y: -60,
             floating: true,
-            borderWidth: 1//,
-//            backgroundColor: Highcharts.theme.legendBackgroundColor || '#FFFFFF'
+            borderWidth: 1,
+            backgroundColor: Highcharts.theme.legendBackgroundColor || 'rgba(255,255,255,0.4)'
         },
         xAxis: {
             type: 'datetime',
@@ -121,7 +130,7 @@ function update_chart(bldg) {
                 text: 'time'
             },
             labels: {
-                rotation: -72, // -6 (horizontal) if inverted: true
+                rotation: -72,
                 align: 'right'
             }
         },
@@ -203,3 +212,9 @@ function update_chart(bldg) {
     ];
     var chart = new Highcharts.Chart(options);
 }
+// reload graph after loading page to force resize
+// function update() {
+//     if (window.location.href.indexOf("#screen") >= 0) {
+//         window.setTimeout(function(){window.location.reload()}, 900000); //1000 = 1 sec, 900000 = 15 mins
+//     }
+// }
