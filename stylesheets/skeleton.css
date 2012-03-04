@@ -26,8 +26,8 @@ html, body, div, object, h1, h2, p, a, cite, em, img, strong, ul, li, video {
 html, body { 
   background-image:url('../images/wood.jpg'); background-color:#afc5e9; background-position: bottom; margin:auto; background-attachment:fixed; background-size:100%; height:100%; -moz-background-size: 100%;
   overflow:hidden;
-  font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #444; 
+  font: 14px/24px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000; 
   -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
   -webkit-text-size-adjust: none;
   height:100%;
@@ -39,6 +39,12 @@ ul {
 
 a, a:visited { color: #fff; text-decoration: none; outline: 0; }
 a:hover, a:focus { color: #FFB90F; }
+
+.about a, .about a:visited { color: #900; text-decoration: none; outline: 0; font-weight:bold;}
+.about a:hover, .about a:focus { color: #000; }
+
+
+
 p a, p a:visited { line-height: inherit; }
 
 h1, h2 { 
@@ -63,6 +69,9 @@ strong { font-weight: bold; color: #333; }
 .ui-icon-myapp-home  {background:url("../images/231-birdhouse.png") no-repeat !important;}
 .ui-icon-myapp-about {background:url("../images/123-id-card.png") no-repeat !important;}
 .ui-icon-myapp-graph {background:url("../images/122-stats.png") no-repeat !important;}
+.ui-icon-myapp-twitter {background:url("../images/210-twitterbird.png") no-repeat !important;}
+.ui-icon-myapp-book {background:url("../images/96-book.png") no-repeat !important;}
+.ui-icon-myapp-info {background:url("../images/275-broadcast.png") no-repeat !important;}
 
 .ui-page {margin:auto;}
 
@@ -75,6 +84,10 @@ ul + p {margin-top:1em;} /* space above all paragraphs when after lists */
 
 .story{width:100%;}
 
+#about p, #news p {padding:15px;}
+
+.inlineheader{ text-align:center; font-family: AmericanTypewriter-Bold, "Geneva", Helvetica, Arial, sans-serif; font-size:24px; color:#900; padding:0; margin:0;}
+
 
 /* #Base 960 Grid 
 ================================================== */
@@ -86,7 +99,7 @@ body {
   background-size:100%;
   height:100%;
   overflow:hidden;
-  line-height: 1; }
+  line-height: 1.4; }
 }
 
 #home, #tips, #total, #DMU, #info, #screen {
@@ -95,6 +108,14 @@ body {
   height:100%;
   position:absolute;
   background:transparent;
+}
+
+#about {
+  width:100%;
+  padding:0;
+  height:100%;
+  position:absolute;
+  background:f80;
 }
 .footer {
   position:absolute;
@@ -197,6 +218,15 @@ body {
     position:absolute;
     background:transparent;
   }
+  
+  #about {
+  background-image:url('../images/about.jpg');
+  }
+  
+  #news {
+  background-image:url('../images/tweetbg.jpg');
+  }
+  
   .mapcontent {
     background-image:url('../images/maps.png');
     background-repeat:no-repeat;
@@ -258,6 +288,18 @@ body {
     height:100%;
     position:absolute;
   }
+  
+  #about {
+  background-image:url('../images/aboutsmall.jpg');
+  }
+  
+  #news {
+  background-image:url('../images/tweetbgsmall.jpg');
+  }
+  
+  .tweet{margin-left:40px; margin-top:30px; width:210px;}
+  .findout{margin-left:10px; maring-top:10px; width:150px;}
+  
   .content {
     width:100%;
     padding:0;
