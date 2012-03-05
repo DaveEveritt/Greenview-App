@@ -227,6 +227,9 @@ body {
   background-image:url('../images/tweetbg.jpg');
   }
   
+  .tweet{width:210px; font-size:28px;margin:auto; margin-top:100px;width:500px;}
+  .findout{margin-left:120px; margin-top:170px; width:250px;  font-size:24px;}
+  
   .mapcontent {
     background-image:url('../images/maps.png');
     background-repeat:no-repeat;
@@ -270,6 +273,10 @@ body {
     border:0;
     padding:0;
   }
+  
+  #about p{font-size:22px;}
+  
+  .inlineheader, #about .inlineheader{font-size:40px;}
 
 } /* END #Tablet (Portrait) */
 
