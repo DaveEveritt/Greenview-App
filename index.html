@@ -42,7 +42,12 @@
         <script src="javascripts/highcharts/highcharts.js"></script>
         <script src="javascripts/highcharts/themes/grid.js"></script>
         <script src="javascripts/greenview.js"></script>
-
+        <style>
+            /* patch for jquerymobile page flicker */
+            .ui-page {
+                -webkit-backface-visibility: hidden;
+            } 
+        </style>
     </head>
     <body>
 
@@ -120,7 +125,7 @@
                 </div>
             </div>
             <div data-role="content">
-            	<div class="about">
+              <div class="about">
 <script type="text/javascript">
 
 jQuery(document).ready(function() {
@@ -128,9 +133,7 @@ jQuery(document).ready(function() {
     // set your twitter id
     var user = 'garethdoodles';
 
-
     // using jquery built in get json method with twitter api, return only one result
-
    jQuery.getJSON('https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&exclude_replies=true&screen_name=greenviewdmu&count=1&callback=?', function(data) {
 
         // result returned
@@ -146,8 +149,7 @@ jQuery(document).ready(function() {
         // output the result
         jQuery(".tweet").html(tweet);
 
-    }); 
-
+    });
 
 });
 
